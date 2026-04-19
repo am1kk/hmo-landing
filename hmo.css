@@ -1,0 +1,181 @@
+/* ============================================================
+   HEAR ME OUT — COLORS & TYPE
+   ============================================================
+   Pure-black voice-message social app. Color system is spartan:
+   black canvas, white text, translucent glass surfaces, and a
+   handful of HYPER-saturated accents that pop against the dark.
+   Type pairs a chunky display grotesk (ABC Gravity) with a tight
+   sans (Inter Tight). 3D emoji stickers do the heavy lifting for
+   iconography.
+   ============================================================ */
+
+@font-face {
+  font-family: "Special Gothic Expanded One";
+  src: url("./fonts/SpecialGothicExpandedOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("./fonts/InterTight-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ——— BASE COLORS ——————————————————————————————————————— */
+  --hmo-void:        #000000;          /* app canvas, status bars */
+  --hmo-black:       #0E0E0E;          /* card base (goes translucent) */
+  --hmo-near-white:  #FAFAFA;          /* display text on dark */
+  --hmo-white:       #FFFFFF;
+  --hmo-ghost-05:    rgba(255,255,255,0.05);
+  --hmo-ghost-15:    rgba(255,255,255,0.15);
+  --hmo-ghost-30:    rgba(255,255,255,0.30);
+  --hmo-ghost-40:    rgba(255,255,255,0.40);
+
+  /* ——— GLASS SURFACES ————————————————————————————————————— */
+  /* everything on HMO is a dark translucent capsule. */
+  --hmo-glass-30:    rgba(14,14,14,0.30);    /* default card/pill */
+  --hmo-glass-70:    rgba(14,14,14,0.70);    /* modal / sheet */
+  --hmo-glass-dim:   rgba(31,37,39,0.70);    /* deeper tinted variant */
+  --hmo-onblack-30:  rgba(0,0,0,0.30);       /* over busy imagery */
+
+  /* ——— ACCENT POPS ———————————————————————————————————————— */
+  /* loud, gen-z, chosen to survive on #000. use sparingly. */
+  --hmo-acid:        rgb(0,255,85);          /* "radioactive" green — handles, IDs */
+  --hmo-siren:       rgb(255,0,0);           /* red — counters, REC dot */
+  --hmo-hotpink:     rgb(255,12,202);        /* pink — share, viral CTAs */
+  --hmo-butter:      #FFD400;                /* yellow — "All info" logo, plus btn */
+
+  /* ——— 3D STICKER-EMOJI PALETTE (pulled from the puffy assets) ——— */
+  --hmo-sticker-ear:       #F2C39A;
+  --hmo-sticker-fire:      #FF6A00;
+  --hmo-sticker-globe:     #2E7DFF;
+  --hmo-sticker-chat:      #E9EAEE;
+
+  /* ——— SEMANTIC ——————————————————————————————————————— */
+  --hmo-fg:          var(--hmo-white);
+  --hmo-fg-muted:    rgba(255,255,255,0.50); /* timestamps, usernames under titles */
+  --hmo-fg-subtle:   rgba(255,255,255,0.40);
+  --hmo-bg:          var(--hmo-void);
+  --hmo-surface:     var(--hmo-glass-30);
+  --hmo-surface-2:   var(--hmo-glass-70);
+  --hmo-stroke:      rgba(238,238,238,0.8);
+  --hmo-stroke-soft: rgba(124,139,137,0.27);
+  --hmo-danger:      var(--hmo-siren);
+  --hmo-success:     var(--hmo-acid);
+  --hmo-link:        var(--hmo-acid);
+
+  /* ——— RADII — everything is a capsule or a big soft card ——— */
+  --hmo-r-pill:      9999px;
+  --hmo-r-card-lg:   40px;    /* profile card, big containers */
+  --hmo-r-card:      35px;    /* standard voice-message card */
+  --hmo-r-chip:      16px;    /* small pills inside a card */
+  --hmo-r-btn:       42px;
+
+  /* ——— SHADOW SYSTEM ———————————————————————————————————————
+     HMO uses a signature "floating glass" shadow combo:
+     soft near-shadow + deep far-shadow + inset white rim. */
+  --hmo-shadow-glass:
+    0 5px 10px 0 rgba(0,0,0,0.10),
+    0 42px 25px 0 rgba(0,0,0,0.05),
+    inset 0 0 12px 4px rgba(255,255,255,0.05);
+  --hmo-shadow-rim:  inset 0 0 8px 0 rgba(255,255,255,0.15);
+  --hmo-shadow-pop:  0 8px 24px 0 rgba(0,255,85,0.25);  /* acid-green glow for primary CTA */
+
+  /* ——— BLURS ——————————————————————————————————————————— */
+  --hmo-blur-card:   blur(32px);
+  --hmo-blur-pill:   blur(10.839px);
+  --hmo-blur-heavy:  blur(64.831px);
+
+  /* ——— SPACING (4pt base, but HMO is generous) ——— */
+  --hmo-s-1:  4px;
+  --hmo-s-2:  8px;
+  --hmo-s-3:  12px;
+  --hmo-s-4:  16px;
+  --hmo-s-5:  20px;
+  --hmo-s-6:  24px;
+  --hmo-s-7:  32px;
+  --hmo-s-8:  40px;
+
+  /* ——— TYPE FAMILIES ——————————————————————————————————————
+     The figma uses "ABC Gravity Unlicensed Trial". We substitute
+     "Special Gothic Expanded One" (Google Fonts) which has the same
+     chunky wide-grotesk energy. Flagged in README. */
+  --hmo-font-display: "Special Gothic Expanded One", "ABC Gravity", "Archivo Black", system-ui, sans-serif;
+  --hmo-font-body:    "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --hmo-font-mono:    "SF Mono", ui-monospace, Menlo, monospace;
+
+  /* ——— TYPE SCALE ———————————————————————————————————————
+     HMO is a mobile app; body is dense at 9–16px, display is
+     aggressive at 22–64. Letter-spacing is almost always -0.04em
+     on body Inter (hot tight). Display is natural tracking. */
+  --hmo-t-display-xl: 700 64px/0.95 var(--hmo-font-display);
+  --hmo-t-display-l:  400 44px/1.0  var(--hmo-font-display);
+  --hmo-t-display-m:  400 28px/1.0  var(--hmo-font-display);
+  --hmo-t-display-s:  400 22px/1.1  var(--hmo-font-display);
+  --hmo-t-title:      400 17px/1.2  var(--hmo-font-display);
+  --hmo-t-prompt:     400 14px/1.2  var(--hmo-font-display);   /* prompt titles on cards */
+  --hmo-t-h-sans:     700 17px/1.0  var(--hmo-font-body);
+  --hmo-t-body:       500 16px/1.1  var(--hmo-font-body);
+  --hmo-t-body-sm:    500 14px/1.1  var(--hmo-font-body);
+  --hmo-t-meta:       500 12px/1.0  var(--hmo-font-body);
+  --hmo-t-caption:    500 10px/1.0  var(--hmo-font-body);
+  --hmo-t-micro:      600 9px/1.0   var(--hmo-font-body);    /* usernames under prompts */
+  --hmo-t-micro-xxs:  600 8.5px/1.0 var(--hmo-font-body);
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT DEFAULTS
+   ============================================================ */
+html, body {
+  background: var(--hmo-bg);
+  color: var(--hmo-fg);
+  font: var(--hmo-t-body);
+  letter-spacing: -0.04em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 { font: var(--hmo-t-display-xl); letter-spacing: 0; margin: 0; }
+h2 { font: var(--hmo-t-display-l);  letter-spacing: 0; margin: 0; }
+h3 { font: var(--hmo-t-display-m);  letter-spacing: 0; margin: 0; }
+h4 { font: var(--hmo-t-display-s);  letter-spacing: 0; margin: 0; }
+h5 { font: var(--hmo-t-title);      letter-spacing: -0.01em; margin: 0; }
+
+p, li  { font: var(--hmo-t-body);  margin: 0; }
+small  { font: var(--hmo-t-meta);  color: var(--hmo-fg-muted); }
+code   { font: 500 13px/1.2 var(--hmo-font-mono); letter-spacing: 0; }
+
+a { color: var(--hmo-acid); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Handy utility classes that map tokens → CSS (for preview cards) */
+.hmo-display    { font: var(--hmo-t-display-l); letter-spacing: 0; }
+.hmo-prompt     { font: var(--hmo-t-prompt); color: var(--hmo-white); letter-spacing: 0; }
+.hmo-meta       { font: var(--hmo-t-meta);   color: var(--hmo-fg-muted); }
+.hmo-caption    { font: var(--hmo-t-caption);color: var(--hmo-fg-muted); }
+.hmo-handle     { font: var(--hmo-t-display-s); color: var(--hmo-acid); letter-spacing: 0; }
+
+/* Signature card */
+.hmo-card {
+  background: var(--hmo-glass-30);
+  border-radius: var(--hmo-r-card);
+  backdrop-filter: var(--hmo-blur-card);
+  -webkit-backdrop-filter: var(--hmo-blur-card);
+  box-shadow: var(--hmo-shadow-glass);
+  color: var(--hmo-white);
+}
+
+.hmo-pill {
+  background: var(--hmo-onblack-30);
+  border-radius: var(--hmo-r-pill);
+  color: var(--hmo-white);
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
