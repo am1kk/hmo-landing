@@ -1,5 +1,5 @@
 // Shared bits — accent map, install URL, icons
-const INSTALL_URL = "https://discord.com/oauth2/authorize?client_id=1475142178253705290";
+const INSTALL_URL = "https://discord.com/oauth2/authorize?client_id=1475142178253705290&permissions=2147601536&integration_type=0&scope=bot+applications.commands";
 
 const ACCENTS = {
   acid:    { name: "Acid",    color: "rgb(0,255,85)",   rgb: "0,255,85" },
