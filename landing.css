@@ -564,90 +564,6 @@ body::after {
   75% { transform: rotate(10deg) scale(1.1); }
 }
 
-/* ===================== WHY VOICE ==================== */
-.why {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: center;
-}
-.why-bullets {
-  display: flex; flex-direction: column; gap: 14px;
-}
-.why-bullet {
-  display: flex; align-items: flex-start; gap: 18px;
-  padding: 22px 26px;
-  background: var(--hmo-glass-30);
-  border-radius: 24px;
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  box-shadow: var(--hmo-shadow-rim);
-}
-.why-bullet img {
-  width: 44px; height: 44px; flex-shrink: 0;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
-}
-.why-bullet h4 {
-  font: var(--hmo-font-display);
-  font-weight: 400;
-  font-size: 22px;
-  color: #fff;
-  margin: 2px 0 6px;
-  letter-spacing: -0.01em;
-}
-.why-bullet p {
-  font: var(--hmo-t-body-sm);
-  color: rgba(255,255,255,0.65);
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* ===================== COMMANDS ======================= */
-.cmds {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-.cmd {
-  padding: 26px 28px;
-  background: var(--hmo-glass-30);
-  border-radius: 24px;
-  box-shadow: var(--hmo-shadow-rim);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  display: flex; flex-direction: column; gap: 10px;
-}
-.cmd .row {
-  display: flex; align-items: center; gap: 12px;
-}
-.cmd .chip {
-  display: inline-flex; align-items: center;
-  padding: 4px 10px;
-  background: rgba(var(--accent-rgb),0.15);
-  color: var(--accent);
-  border: 1px solid rgba(var(--accent-rgb),0.3);
-  border-radius: 6px;
-  font: 700 11px/1 var(--hmo-font-body);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.cmd .chip.dm {
-  background: rgba(255,12,202,0.12);
-  color: var(--hmo-hotpink);
-  border-color: rgba(255,12,202,0.3);
-}
-.cmd code {
-  font: 600 18px/1 var(--hmo-font-mono);
-  color: #fff;
-  letter-spacing: 0;
-}
-.cmd .desc {
-  font: var(--hmo-t-body-sm);
-  color: rgba(255,255,255,0.6);
-  line-height: 1.4;
-  margin: 2px 0 0;
-}
-
 /* ===================== FINAL CTA ====================== */
 .final {
   text-align: center;
@@ -971,8 +887,6 @@ body::after {
   .section { padding: 80px 24px; }
   .steps { grid-template-columns: 1fr; }
   .prompts-grid { grid-template-columns: 1fr 1fr; }
-  .why { grid-template-columns: 1fr; gap: 40px; }
-  .cmds { grid-template-columns: 1fr; }
   .nav { padding: 14px 20px; }
   .nav-cta { padding: 10px 14px; font-size: 14px; }
 }
